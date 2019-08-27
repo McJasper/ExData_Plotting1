@@ -8,7 +8,7 @@
 setwd(Your_wd_here)
 source("sourceData.R")
 
-# Plot1
+# Plot2
 png(filename = "plot1.png", width = 480, height = 480)
 plot(x = rawData$Time, y = rawData$Global_active_power,
      ylab = "Global Active Power (kilowatts)"
