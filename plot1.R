@@ -9,7 +9,6 @@ setwd(Your_wd_here)
 
 source("sourceData.R")
 
-
 # Plot1
 png(filename = "plot1.png", width = 480, height = 480)
 hist(x = rawData$Global_active_power, col = "red",
