@@ -34,11 +34,9 @@ rawData <- read.table(file = "household_power_consumption.txt",
                       skip = dateIndices[1]-1, nrows = length(dateIndices))
 colnames(rawData) <- columnNames
 
+# Combine Date and Time into a DateTime column for plotting
+rawData$DateTime <- as_datetime(strptime(x = paste(rawData$Date,rawData$Time), 
+                                     format = "%d/%m/%Y %H:%M:%S"), tz = "")
+
 # Clean up environment
 rm(allDates, smallData, columnNames, dateIndices, dateVector, tableClasses)
-
-# Reformat date to correct class and format
-rawData$Date <- as.Date(strptime(x = rawData$Date, format = "%d/%m/%Y"))
-
-# Reformat time to correct class and format
-rawData$Time <- factor(rawData$Time, ordered = T)
