@@ -6,15 +6,13 @@
 # and the environment is cleaned.
 
 setwd(Your_wd_here)
+
 source("sourceData.R")
 
 # Plot2
-png(filename = "plot1.png", width = 480, height = 480)
-plot(x = rawData$Time, y = rawData$Global_active_power,
-     ylab = "Global Active Power (kilowatts)"
-)
-axis(side = 1)
-substr(wday(rawData$Date, label = T, abbr = T), start = 1, stop = 3)
+png(filename = "plot2.png", width = 480, height = 480)
+plot(x = rawData$DateTime, y = rawData$Global_active_power,
+     ylab = "Global Active Power (kilowatts)", type = "l", xlab = "")
 dev.off()
 
 
